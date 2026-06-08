@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reshma Canchi Pandurangarao - IMCO Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 30px;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .contact-info a {
+            color: #1e40af;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+
+        .recipient {
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .salutation {
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .content p:first-letter {
+            margin-left: 0;
+        }
+
+        .closing {
+            margin-top: 40px;
+        }
+
+        .sign-off {
+            margin-bottom: 50px;
+            font-size: 15px;
+        }
+
+        .signature {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-print {
+            background-color: #1e40af;
+            color: white;
+        }
+
+        .btn-print:hover {
+            background-color: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-download {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .btn-download:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-copy {
+            background-color: #f59e0b;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .action-buttons {
+                display: none;
+            }
+        }
+
+        .highlight {
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #10b981;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .toast.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="name">Reshma Canchi Pandurangarao</div>
+            <div class="contact-info">
+                North York, Toronto, ON | <a href="tel:905-462-9015">905-462-9015</a> | <a href="mailto:reshirah.ca@gmail.com">reshirah.ca@gmail.com</a>
+            </div>
+            <div class="date">[Date]</div>
+        </header>
+
+        <div class="recipient">
+            IMCO<br>
+            Hiring Manager, Senior Manager, Data Governance<br>
+            16 York Street, Suite 2400<br>
+            Toronto, ON M5J 0E6
+        </div>
+
+        <div class="salutation">Dear Hiring Team,</div>
+
+        <div class="content">
+            <p>I'm applying for the Senior Manager, Data Governance role at IMCO because you're asking for something I believe in—operationalizing governance as embedded practice, not parallel compliance. That distinction matters. I've spent seven years building governance frameworks that actually influence how organizations operate. I started in test data management, moved into enterprise data governance, and now I own AI governance as a formal responsibility. I've learned that governance at scale only works when it's woven into business processes and decision-making, not bolted on as an afterthought. Your mandate to advance AI governance evolution while operationalizing core governance is exactly where I want to direct my next chapter.</p>
+
+            <p>At Ontario Cannabis Retail Corporation, I operationalized end-to-end governance across a Crown agency managing complex member data and regulatory obligations. I founded the Data Governance Committee, authored governance policies and standards aligned with FIPPA, and deployed Microsoft Purview enterprise-wide—achieving <span class="highlight">56% asset scanning and 40% lineage coverage</span> in the first year. But here's what mattered more: I built governance as an embedded operational model. I appointed steward champions in each business unit so business teams led governance rather than IT imposed it. I managed end-to-end report governance in partnership with Data and IT analysts, ensuring governance principles shaped how we built and delivered reports to stakeholders. On data quality, I assessed the organization from both business and IT perspectives, discovered through surveys that quality was a material pain point, and implemented improvement models that measurably enhanced data trust. When we experienced a data breach, I led the response, stopped unauthorized activity immediately, and created audit-ready protocols that demonstrated governance maturity under pressure. My CIO recognized the work as a complete governance model because it translated strategy into operational capability.</p>
+
+            <p>This foundation came from earlier work. At Accenture, I specialized in test data governance and privacy compliance for QBE Insurance, translating GDPR and DPA requirements into operational access controls and masking strategies that protected sensitive data while enabling realistic testing. At Mphasis, I built privacy-safe data models and served as TDM subject matter expert across multiple applications. I learned early that governance discipline isn't bureaucracy—it's the foundation that enables both business velocity and regulatory confidence. I also learned how to influence without authority, how to work across engineering and business teams that speak different languages, and how to deliver solutions that actually work operationally.</p>
+
+            <p>What draws me to IMCO is your explicit focus on AI governance evolution. This isn't theoretical for me. I own enterprise AI governance as a formal responsibility at OCS, partnering with Risk, Compliance, and Investment teams to embed governance by design into AI use cases from inception. I've learned that if you don't embed data governance into AI governance from the start, you can't govern at scale. I hold my CDMP credential and am actively pursuing my AIGP because I believe governance discipline is evolving, and I want to lead from the frontier of that evolution, not follow it. I'm not interested in copying governance models from other organizations. I'm interested in defining what AI governance looks like at a pension fund managing significant member data and investment decisions.</p>
+
+            <p>I can define and operationalize governance frameworks that enable business strategy while maintaining regulatory discipline. I can influence senior leaders across Risk, Compliance, and Investment without direct authority because I lead with clarity about governance value and how it enables decisions. I've managed crises and delivered audit-ready solutions. I've built stewardship models that scale through distributed ownership. I understand regulated environments—I've operated under FIPPA, GDPR, and Data Protection Act frameworks. I don't need a ramp-up period. I can hit the ground at IMCO and accelerate your program immediately.</p>
+
+            <p>I'm excited to bring governance discipline, AI governance ownership, and full-stack operationalization capability to IMCO. You're building governance infrastructure that matters to Ontario's public sector funds and institutional investors. I want to be part of that work.</p>
+        </div>
+
+        <div class="closing">
+            <div class="sign-off">Warmly,</div>
+            <div class="signature">
+                Reshma Canchi Pandurangarao<br>
+                905-462-9015<br>
+                reshirah.ca@gmail.com
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+            <button class="btn-copy" onclick="copyToClipboard()">📋 Copy Text</button>
+            <button class="btn-download" onclick="downloadPDF()">⬇️ Download PDF</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        function copyToClipboard() {
+            const text = document.querySelector('.content').innerText + '\n\nWarmly,\n\nReshma Canchi Pandurangarao\n905-462-9015\nreshirah.ca@gmail.com';
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Cover letter copied to clipboard!');
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function downloadPDF() {
+            showToast('PDF download feature coming soon! Use Print > Save as PDF for now.');
+        }
+    </script>
+</body>
+</html>
